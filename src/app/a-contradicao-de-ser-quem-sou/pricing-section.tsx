@@ -47,7 +47,7 @@ export default function PricingSection() {
   ];
 
   return (
-    <section className="py-16 bg-gray-900">
+    <section className="py-16 bg-gray-900" id="pricing">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center text-white mb-12">
           Escolha a Transformação Que Combina com Você
