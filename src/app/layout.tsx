@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import GoogleTagManager from "@/components/GoogleTagManager";
 
 import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+import {
+  interThin,
+  interExtraLight,
+  interLight,
+  interRegular,
+  interMedium,
+  interSemiBold,
+  interBold,
+  interExtraBold,
+  interBlack,
+} from "./fonts";
 
 export const metadata: Metadata = {
   title: "[Pré Lançamento] - A Contradição de Ser Quem Sou",
@@ -76,7 +76,18 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`
+            ${interThin.variable}
+            ${interExtraLight.variable}
+            ${interLight.variable}
+            ${interRegular.variable}
+            ${interMedium.variable}
+            ${interSemiBold.variable}
+            ${interBold.variable}
+            ${interExtraBold.variable}
+            ${interBlack.variable}
+            antialiased
+          `}
       >
         <GoogleTagManager gtmId="GTM-XXXXXXX" />
         {children}
