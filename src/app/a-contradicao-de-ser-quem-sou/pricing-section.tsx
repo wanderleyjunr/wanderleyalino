@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Check, Star } from "lucide-react";
+import Link from "next/link";
 
 export default function PricingSection() {
   const pricingOptions = [
@@ -12,9 +13,10 @@ export default function PricingSection() {
         "Leitura em qualquer dispositivo",
         "Versão otimizada para estudo e reflexão",
       ],
-      price: 47.98,
+      price: 29.9,
       originalPrice: 97.98,
       ctaText: "QUERO MEU EBOOK",
+      href: "https://pay.kirvano.com/d8effec3-44a3-489c-b22b-cbe91955bf57",
     },
     {
       title: " Livro Físico + Ebook + Mentoria Online + FRETE GRÁTIS",
@@ -28,6 +30,7 @@ export default function PricingSection() {
       originalPrice: 497.0,
       ctaText: "GARANTIR PACOTE COMPLETO",
       featured: true,
+      href: "https://pay.kirvano.com/70c1947a-f9fa-48cc-b9d4-38b4a77774e1",
     },
     {
       title: "Livro Físico + Ebook + Frete Grátis",
@@ -39,6 +42,7 @@ export default function PricingSection() {
       price: 89.9,
       originalPrice: 149.9,
       ctaText: "COMPRAR LIVRO + EBOOK",
+      href: "https://pay.kirvano.com/cb7e59b8-bc8b-4d95-937c-1360cdd2d2e2",
     },
   ];
 
@@ -83,15 +87,17 @@ export default function PricingSection() {
                   <div className="text-5xl font-bold mb-4">
                     R${option.price.toFixed(2)}
                   </div>
-                  <Button
-                    className={`w-full font-bold ${
-                      option.featured
-                        ? "bg-[#f5c426] text-black hover:bg-[#d9ab1f] "
-                        : "bg-gray-700 hover:bg-gray-600"
-                    }`}
-                  >
-                    {option.ctaText}
-                  </Button>
+                  <Link href={option.href} prefetch>
+                    <Button
+                      className={`w-full font-bold ${
+                        option.featured
+                          ? "bg-[#f5c426] text-black hover:bg-[#d9ab1f] "
+                          : "bg-gray-700 hover:bg-gray-600"
+                      }`}
+                    >
+                      {option.ctaText}
+                    </Button>
+                  </Link>
                 </div>
               </CardFooter>
             </Card>

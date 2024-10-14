@@ -1,7 +1,7 @@
 import React from "react";
-import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { Instagram, Youtube } from "lucide-react";
+// import { Button } from "@/components/ui/button";
+// import { Input } from "@/components/ui/input";
 import Link from "next/link";
 
 export default function Footer() {
@@ -63,12 +63,12 @@ export default function Footer() {
               <li>Endereço: Barueri, SP - Brasil</li>
             </ul>
           </div>
-          <div>
+          {/*   <div>
             <h4 className="text-lg font-semibold mb-4">Newsletter</h4>
             <p className="text-sm mb-2">
               Receba novidades e conteúdos exclusivos.
             </p>
-            <form className="space-y-2">
+             <form className="space-y-2">
               <Input
                 type="email"
                 placeholder="Seu e-mail"
@@ -80,8 +80,8 @@ export default function Footer() {
               >
                 Inscrever-se
               </Button>
-            </form>
-          </div>
+            </form> 
+          </div>*/}
         </div>
         <div className="mt-8 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-gray-400 mb-4 md:mb-0">
@@ -89,29 +89,31 @@ export default function Footer() {
             reservados.
           </p>
           <div className="flex space-x-4">
-            <a
+            {/* <a
               href="#"
               className="text-gray-400 hover:text-[#f5c426] transition-colors"
             >
               <Facebook size={20} />
               <span className="sr-only">Facebook</span>
-            </a>
+            </a> */}
             <a
-              href="#"
+              href="https://www.instagram.com/wanderleyalino/"
+              target="_blank"
               className="text-gray-400 hover:text-[#f5c426] transition-colors"
             >
               <Instagram size={20} />
               <span className="sr-only">Instagram</span>
             </a>
-            <a
+            {/* <a
               href="#"
               className="text-gray-400 hover:text-[#f5c426] transition-colors"
             >
               <Twitter size={20} />
               <span className="sr-only">Twitter</span>
-            </a>
+            </a> */}
             <a
-              href="#"
+              href="https://www.youtube.com/@deleyjunr"
+              target="_blank"
               className="text-gray-400 hover:text-[#f5c426] transition-colors"
             >
               <Youtube size={20} />

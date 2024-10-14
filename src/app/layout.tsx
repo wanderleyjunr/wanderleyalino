@@ -89,7 +89,7 @@ export default function RootLayout({
             antialiased
           `}
       >
-        <GoogleTagManager gtmId="GTM-XXXXXXX" />
+        <GoogleTagManager gtmId="GTM-PVSSJCWF" />
         {children}
       </body>
     </html>
