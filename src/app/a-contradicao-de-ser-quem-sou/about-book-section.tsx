@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Feather, Moon, Shield, Infinity } from "lucide-react";
+import Link from "next/link";
 
 export default function AboutBookSection() {
   const bookFeatures = [
@@ -81,9 +82,11 @@ export default function AboutBookSection() {
                 </Card>
               ))}
             </div>
-            <Button className="h-12 w-full font-bold  text-lg bg-[#f5c426] text-black hover:bg-[#d9ab1f]">
-              Comece Sua Jornada Agora
-            </Button>
+            <Link href="#pricing">
+              <Button className="h-12 w-full font-bold  text-lg bg-[#f5c426] text-black hover:bg-[#d9ab1f]">
+                Comece Sua Jornada Agora
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

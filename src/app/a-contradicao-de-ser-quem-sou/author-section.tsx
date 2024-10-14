@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Users, Lightbulb, Heart } from "lucide-react";
+import Link from "next/link";
 
 const AuthorSection = () => {
   return (
@@ -91,9 +92,11 @@ const AuthorSection = () => {
               transition={{ duration: 0.5, delay: 0.6 }}
               className="flex w-full justify-center"
             >
-              <Button className="w-96 h-12 font-bold text-lg bg-[#f5c426] text-black hover:bg-[#d9ab1f]">
-                Conheça Mais Sobre Wanderley
-              </Button>
+              <Link href={"#pricing"}>
+                <Button className="w-96 h-12 font-bold text-lg bg-[#f5c426] text-black hover:bg-[#d9ab1f]">
+                  Comprar Agora
+                </Button>
+              </Link>
             </motion.div>
           </div>
         </div>

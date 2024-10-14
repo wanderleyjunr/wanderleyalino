@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import Link from "next/link";
 
 export default function HeroSection() {
   return (
@@ -39,10 +40,11 @@ export default function HeroSection() {
             Desvende os segredos da sua identidade além da superfície e descubra
             a verdade de Deus escondida em você.
           </p>
-
-          <Button className="mt-6 w-full h-12 font-bold bg-[#f5c426] text-black hover:bg-[#d9ab1f] text-lg py-4">
-            ENCARE SUA VERDADE
-          </Button>
+          <Link href="#pricing">
+            <Button className="mt-6 w-full h-12 font-bold bg-[#f5c426] text-black hover:bg-[#d9ab1f] text-lg py-4">
+              GARANTIR MEU EXEMPLAR
+            </Button>
+          </Link>
         </div>
       </div>
 
@@ -72,9 +74,11 @@ export default function HeroSection() {
             </p>
 
             <div className="w-full flex ">
-              <Button className="mt-6 w-full h-12 font-bold bg-[#f5c426] text-black hover:bg-[#d9ab1f] text-lg py-4 ">
-                GARANTIR MEU EXEMPLAR
-              </Button>
+              <Link href="#pricing">
+                <Button className="mt-6 w-full h-12 font-bold bg-[#f5c426] text-black hover:bg-[#d9ab1f] text-lg py-4 ">
+                  GARANTIR MEU EXEMPLAR
+                </Button>
+              </Link>
             </div>
           </div>
           <div className="w-1/2 mt-3 md:mt-0 relative">
