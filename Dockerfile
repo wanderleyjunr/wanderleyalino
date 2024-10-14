@@ -1,23 +1,31 @@
-# Use a imagem oficial do Node.js como base
-FROM node:18-alpine
+# Use uma imagem base do Node.js
+FROM node:18-alpine AS base
 
-# Defina o diretório de trabalho no container
+# Instale as dependências necessárias
+FROM base AS deps
+RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
-# Copie os arquivos package.json e package-lock.json (se disponível)
-COPY package*.json ./
-
-# Instale as dependências do projeto
+# Copie os arquivos de configuração do projeto
+COPY package.json package-lock.json* ./
 RUN npm install
 
-# Copie os arquivos do projeto para o container
+# Construa a aplicação
+FROM base AS builder
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-# Build da aplicação
+# Construa a aplicação Next.js
 RUN npm run build
 
-# Expõe a porta que o Next.js usa por padrão
-EXPOSE 3000
+# Imagem de produção
+FROM base AS runner
+WORKDIR /app
 
-# Define o comando para iniciar a aplicação
-CMD ["npm", "start"]
+ENV NODE_ENV production
+
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 nextjs
+
+COPY --from=builder /app/public ./public
